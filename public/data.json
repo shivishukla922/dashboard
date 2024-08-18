@@ -1,0 +1,42 @@
+{
+    "categories": [
+      {
+        
+        "name": "CSPM Executive Dashboard",
+        "widgets": [
+          {
+            "id": "cspm1",
+            "name": "Cloud Account",
+            "text": "Connected"
+          },
+          {
+            "id": "cspm2",
+            "name": "Cloud Account Risk Assessment",
+            "text": "Passed"
+          }
+        ]
+      },
+      {
+        "name": "CWPP DASHBOARD",
+      "widgets": [
+        {
+          "id": "cd1",
+          "name": "Top 5 Namespace Specific Alerts",
+          "text": "marked"
+        },
+        {
+          "id": "cd2",
+          "name": "Workload Alerts",
+          "text": "hello"
+        }
+      ]
+      }
+      
+    
+      
+
+    ]
+  }
+ 
+ 
+  

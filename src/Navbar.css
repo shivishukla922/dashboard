@@ -1,0 +1,61 @@
+/* Navbar.css */
+
+.navbar-ctr {
+    
+    background-color: skyblue; 
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .navbar {
+
+    width: 1200px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+  }
+  
+  .navbar-logo {
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #333; 
+  }
+  
+  .search-bar-ctr {
+   
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+  }
+  
+  .search-bar {
+   
+    width: 400px;
+    padding: 8px 16px;
+    padding-left: 40px;
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    outline: none;
+    font-size: 16px; 
+    
+  }
+  .search-icon-display{
+    display: flex;
+   
+    align-items: center;
+    position: relative;
+  }
+  .se-icon{
+    position: absolute;
+    margin-left: 10px;
+    
+    
+  }
+  
+  .search-bar::placeholder {
+    color: #888; 
+  }
+  
