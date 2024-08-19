@@ -1,39 +1,36 @@
 .modal {
   position: fixed;
   top: 0;
-  right:  0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: flex-end;
- 
 }
 
 .modal-content {
   background: white;
   border-radius: 5px;
-  width: 300px;
-  overflow: hidden;
+  width: 500px;
+  position: relative;
 }
 
-.modal-header {
-  background-color: darkblue;
+.modal-header h3 {
   color: white;
-  padding: 10px;
-  text-align: center;
- 
-  
+  font-weight: 500;
 }
-
+.widget-text {
+  padding-left: 10px;
+  font-family: Serif;
+}
 .modal-body {
-  padding: 20px;
+  padding: 0px 0px 0px 15px;
 }
 
 .modal-body input,
 .modal-body textarea {
-  width: 100%;
-  padding: 10px;
+  padding: 8px 20px;
   margin: 10px 0;
   border-radius: 3px;
   border: 1px solid #ccc;
@@ -47,12 +44,86 @@
 .modal-footer button {
   padding: 10px 20px;
   margin: 10px 5px;
-  border: none;
-  border-radius: 3px;
+
+  border-radius: 6px;
   cursor: pointer;
 }
 
-.modal-footer button:hover {
-  background-color: #007bff;
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #162a63;
   color: white;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.tab-container {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+.tab {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #162a63;
+}
+
+.widget-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.widget-item label {
+  margin-left: 10px;
+  color: #162a63;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.widget-item-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1px 1px 5px 6px;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.widget-item-box input[type="checkbox"] {
+  transform: scale(1.2);
+  color: #162a63;
+}
+.save-btn {
+  background-color: #162a63;
+  color: #ccc;
+  border: none;
+}
+.input-area {
+  display: flex;
+  justify-content: space-around;
+}
+.tab.active-tabs {
+  font-weight: bold;
+  border-bottom: 1px solid #162a63;
 }

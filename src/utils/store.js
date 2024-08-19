@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import dashboardReducer from "./dashboardSlice";
-import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
+import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 
 const persistConfig = {

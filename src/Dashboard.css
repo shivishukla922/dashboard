@@ -1,6 +1,6 @@
 .dashboard {
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: rgba(240, 245, 249);
 }
 
 .category {
@@ -16,7 +16,7 @@
 .widgets {
   display: flex;
 
-  gap: 20px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -27,11 +27,30 @@
   align-items: center;
   justify-content: center;
   width: 350px;
-  height: 300px;
+  height: 200px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 200px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.ad-btn {
+  background: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-weight: 500;
 }
 .cross-icon {
   top: 0;
@@ -40,4 +59,8 @@
   position: absolute;
   display: flex;
   justify-content: flex-end;
+}
+.add-text {
+  position: fixed;
+  right: 8%;
 }

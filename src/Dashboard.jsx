@@ -4,32 +4,28 @@ import data from "../public/data.json";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategories, addWidget, removeWidget } from "./utils/dashboardSlice";
 import Modal from "./Modal";
-import { RxCrossCircled } from "react-icons/rx";  
+import { RxCrossCircled } from "react-icons/rx";
 
-const Dashboard = ({searchItem =""}) => {
+const Dashboard = ({ searchItem = "" }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.dashboard.categories);
   const [currentCategoryId, setCurrentCategoryId] = useState();
-  
+
   useEffect(() => {
-   
     console.log(data.categories);
-    if(categories.length ===0){
-    dispatch(setCategories(data.categories));
+    if (categories.length === 0) {
+      dispatch(setCategories(data.categories));
     }
-   
-  }, [dispatch,categories.length]);
+  }, [dispatch, categories.length]);
 
   const handleWidgetClick = (categoryId) => {
     setCurrentCategoryId(categoryId);
-    
+
     setModalOpen(true);
   };
   const handleRemoveWidget = (categoryId, widgetId) => {
-    
     dispatch(removeWidget({ categoryId, widgetId }));
-
   };
 
   const saveWidget = (categoryId, widget) => {
@@ -41,28 +37,29 @@ const Dashboard = ({searchItem =""}) => {
     };
 
     dispatch(addWidget({ categoryId, widget: newWidget }));
-    console.log(categoryId,'id is')
+    console.log(categoryId, "id is");
   };
 
-  
-
-  const filterWidgets=(widgets)=>{
-    return widgets.filter((widget) =>
-      widget && widget.name && widget.name.toLowerCase().includes(searchItem.toLowerCase())
+  const filterWidgets = (widgets) => {
+    return widgets.filter(
+      (widget) =>
+        widget &&
+        widget.name &&
+        widget.name.toLowerCase().includes(searchItem.toLowerCase())
     );
-  }
+  };
 
   return (
     <div className="dashboard">
       {categories && categories.length > 0 ? (
-        categories.map((category) => (
+        categories.map((category) =>
           category ? (
             <div key={category.id} className="category">
               <h2>{category.name}</h2>
-  
+
               <div className="widgets">
                 {category.widgets && category.widgets.length > 0 ? (
-                  filterWidgets(category.widgets).map((widget) => (
+                  filterWidgets(category.widgets).map((widget) =>
                     widget ? (
                       <div key={widget.id} className="widget">
                         <h2>{widget.name}</h2>
@@ -70,39 +67,43 @@ const Dashboard = ({searchItem =""}) => {
                         <div className="cross-div">
                           <RxCrossCircled
                             className="cross-icon"
-                            onClick={() => handleRemoveWidget(category.id, widget.id)}
-                            
+                            onClick={() =>
+                              handleRemoveWidget(category.id, widget.id)
+                            }
                           />
                         </div>
                       </div>
                     ) : null
-                  ))
+                  )
                 ) : (
                   <p>No widgets available</p>
                 )}
-  
-                <button
-                  onClick={() => handleWidgetClick(category.id)}
-                  className="widget"
-                >
-                  + Add widget
-                </button>
+                <div className="add-button">
+                  <button
+                    onClick={() => handleWidgetClick(category.id)}
+                    className="ad-btn"
+                  >
+                    + Add widget
+                  </button>
+                </div>
               </div>
             </div>
           ) : null
-        ))
+        )
       ) : (
         <p>No categories available</p>
       )}
-  
+
       {isModalOpen && (
         <Modal
           onClose={() => setModalOpen(false)}
+          categories={categories}
           categoryId={currentCategoryId}
           onSave={saveWidget}
+          onRemoveWidget={handleRemoveWidget}
         />
       )}
     </div>
   );
-}
-export default Dashboard;  
+};
+export default Dashboard;

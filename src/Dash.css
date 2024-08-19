@@ -1,0 +1,15 @@
+
+.dash-class{
+    padding: 10px;
+    background-color: rgba(240, 245, 249);
+display: flex;
+justify-content: flex-end;
+
+}
+.add-widget{
+    background: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: 500;
+}
