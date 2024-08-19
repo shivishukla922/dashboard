@@ -5,8 +5,8 @@ const Modal = ({categoryId ,onClose,onSave}) => {
 const [widgetName ,setWidgetName] =useState("");
 const [widgetText ,setwidgetText] =useState("");
 
-
-       const saveWidget =()=>{
+    console.log(categoryId,'modal')
+       const addWidget =()=>{
         onSave(categoryId,{name: widgetName,text:widgetText})
         onClose();
        }
@@ -21,7 +21,7 @@ const [widgetText ,setwidgetText] =useState("");
     <input type='text'   placeholder="Widget Name"    value={widgetName}  onChange={ (e)=>setWidgetName(e.target.value)}/>
     <textarea      placeholder="Widget Text"     value={widgetText}   onChange={(e)=>setwidgetText(e.target.value)}/>
     <div className="modal-footer">
-    <button   onClick={saveWidget}>Save</button>
+    <button   onClick={addWidget}>Save</button>
     <button  onClick={onClose}>cancel</button>
     </div>
     </div>

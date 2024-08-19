@@ -12,17 +12,20 @@ const initialState ={
             },
             addWidget:(state,action)=>{
                 const {categoryId ,widget}  =action.payload
-                const category  = state.categories.find(cat =>cat.id   ==categoryId)
+                const category  = state.categories.find(cat =>cat.id   === categoryId)
                 if(category){
                     category.widgets.push(widget);
                 }
+                {
+                    console.error("Category not found for ID:", categoryId);
+                  }
 
             },
             removeWidget:(state,action)=>{
                 const {categoryId ,widgetId} =action.payload;
                 const category =state.categories.find(cat=>cat.id == categoryId)
                 if(category){
-                    category.widgets=category.widgets.filter(widget => widget.id !=widgetId)
+                    category.widgets=category.widgets.filter(widget => widget.id !== widgetId)
                 }
             }
 

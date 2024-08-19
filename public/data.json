@@ -1,6 +1,7 @@
 {
     "categories": [
       {
+        "id":"cspm",
         
         "name": "CSPM Executive Dashboard",
         "widgets": [
@@ -17,6 +18,7 @@
         ]
       },
       {
+        "id":"cwpp",
         "name": "CWPP DASHBOARD",
       "widgets": [
         {
